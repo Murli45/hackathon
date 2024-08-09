@@ -1,0 +1,62 @@
+<!-- Use panel for showcasing the output of architecture diagram || Splitter is also to be used to split the screen -->
+<div>
+    <p-splitter [panelSizes]="[20, 60, 20]" [minSizes]="[10,10,10]" [style]="{ height: '80vh' }" styleClass="mb-5">
+        <ng-template pTemplate>
+            <div class="col flex padding">
+                <div class="container">
+                    <p-dropdown [options]="surgeryType" optionLabel="name" [checkmark]="true" [showClear]="true"
+                        placeholder="Select surgery type" [style]="{ width: '100%' }">
+                    </p-dropdown>
+                    <button pButton type="button" label="Start Surgery" icon="pi pi-check" iconPos="right"
+                        [loading]="loading" (click)="load()" [style]="{ width: '100%' }"
+                        class="p-button-raised p-button-info"></button>
+                    <div [style]="{ width: '100%' }">
+                        <p-panel header="Tool List" [toggleable]="true" [(collapsed)]="isCollapsed">
+                            <div class="tools-container">
+                                <img *ngFor="let image of images" [src]="image.imageUrl" alt="Logo" class="tools-img">
+                            </div>
+                        </p-panel>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template pTemplate>
+            <div class="col flex flex-column align-items-center justify-content-center">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/_vdK5PgcNvc" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+                <img [src]="nextTool.imageUrl" alt="Description of the image" class="tool-panel-img"
+                    *ngIf="processStarted" />
+            </div>
+        </ng-template>
+        <ng-template pTemplate>
+            <div class="col padding">
+                <div class="container tool-info">
+                    <div class="tool-item">
+                        <span class="tool-label">Tool Name</span>
+                        <span class="tool-value">{{toolName}}</span>
+                    </div>
+                    <div class="tool-item">
+                        <span class="tool-label">Description</span>
+                        <span class="tool-value">{{toolDescription}}</span>
+                    </div>
+                    <div class="tool-item">
+                        <span class="tool-label">Usage</span>
+                        <span class="tool-value">{{toolUsage}}</span>
+                    </div>
+                </div>
+                <div class="container tool-history">
+                    <span class="tool-label">
+                        Tool History
+                    </span>
+                    <ul class="tool-list">
+                        <li *ngFor="let tool of usedTool" class="tool-item">
+                            {{ tool.name }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </ng-template>
+    </p-splitter>
+</div>

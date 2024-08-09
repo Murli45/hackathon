@@ -1,0 +1,43 @@
+<div class="header-container">
+    <!-- Logo Section -->
+    <div class="logo p-d-flex p-ai-center">
+        <img src="assets/images/logo.png" alt="Logo" class="logo-img">
+        <!-- <button pButton type="button" class="p-button-outlined" icon="pi pi-file">
+        </button> -->
+    </div>
+
+    <!-- App Name Section -->
+    <div class="app-name p-text-center">
+        <h1>IntelliJ-Rx</h1>
+        <!-- <h2>Infrastructure as Code</h2> -->
+    </div>
+
+    <!-- User Details Section -->
+    <div class="user-details p-d-flex p-ai-center">
+        <div class="user-icon-container" (mouseleave)="closeDropdown()">
+            <button pButton type="button" icon="pi pi-file" class="p-button-outlined"
+                (click)="showPrescription()" style="margin-right: 0.2rem;">
+                <span>Surgery Summary</span>
+            </button>
+            <button pButton type="button" icon="pi pi-user" class="p-button-outlined" (click)="toggleDropdown($event)">
+            </button>
+            <div class="user-dropdown" *ngIf="showDropdown" [@dropdownAnimation]>
+                <div class="user-info">
+                    <div><strong>Logged in as:</strong> Murli Pandey</div>
+                    <div><strong>Assigned role:</strong> Assistant</div>
+                    <div><strong>Department:</strong> Surgery</div>
+                    <div><strong>Sub-Department:</strong> Neurology</div>
+                </div>
+                <div class="logout">
+                    <button pButton type="button" label="Log me out" icon="pi pi-sign-out" (click)="logout()"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p-dialog header="Surgery Summary" [(visible)]="display" [style]="{width: '50vw'}">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam suscipit accusantium quisquam fugit laudantium
+    tenetur, sapiente distinctio exercitationem pariatur quod nemo molestiae placeat id eius debitis consequuntur
+    maiores inventore aspernatur!
+</p-dialog>

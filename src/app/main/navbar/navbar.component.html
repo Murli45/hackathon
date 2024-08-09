@@ -1,0 +1,53 @@
+<div class="card">
+    <p-menubar>
+        <ng-template pTemplate="start">
+            <ul class="p-menubar-root-list">
+                <ng-container *ngFor="let item of items">
+                    <li *ngIf="item.align === 'left'" class="p-menuitem">
+                        <a class="p-menuitem-link">
+                            <span class="p-menuitem-icon" [ngClass]="item.icon"></span>
+                            <span class="p-menuitem-text">{{item.label}}</span>
+                        </a>
+                        <ul *ngIf="item.items" class="p-submenu-list">
+                            <li *ngFor="let subItem of item.items" class="p-menuitem">
+                                <a class="p-menuitem-link">
+                                    <!-- use it for image -->
+                                    <!-- <ng-container *ngIf="subItem.template">
+                                        <ng-container
+                                            *ngTemplateOutlet="customTemplate; context: { $implicit: subItem }"></ng-container>
+                                    </ng-container> -->
+                                    <span class="p-menuitem-text">{{subItem.label}}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ng-container>
+            </ul>
+        </ng-template>
+        <ng-template pTemplate="end">
+            <ul class="p-menubar-root-list">
+                <ng-container *ngFor="let item of items">
+                    <li *ngIf="item.align === 'right'" class="p-menuitem">
+                        <a class="p-menuitem-link" (click)="item.command ? item.command() : null">
+                            <span class="p-menuitem-icon" [ngClass]="item.icon"></span>
+                            <span class="p-menuitem-text">{{item.label}}</span>
+                        </a>
+                        <ul *ngIf="item.items" class="p-submenu-list" [ngClass]="{'right-edge': item.align === 'right'}">
+                            <li *ngFor="let subItem of item.items" class="p-menuitem">
+                                <a class="p-menuitem-link">
+                                    <span class="p-menuitem-icon" [ngClass]="subItem.icon"></span>
+                                    <span class="p-menuitem-text">{{subItem.label}}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ng-container>
+            </ul>
+        </ng-template>
+
+        <!-- Enable it to show logos but you to fix the size -->
+        <!-- <ng-template #customTemplate let-item>
+            <div [innerHTML]="item.template"></div>
+        </ng-template> -->
+    </p-menubar>
+</div>

@@ -1,0 +1,56 @@
+/* app.component.css */
+.p-menubar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+  
+  .p-menubar-root-list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .p-menuitem {
+    position: relative;
+    margin-right: 1rem;
+  }
+  
+  .p-menuitem-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .p-menuitem-icon {
+    margin-right: 0.5rem;
+  }
+  
+  .p-submenu-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .p-submenu-list.right-edge {
+    left: auto;
+    right: 1%;
+  }
+  
+  .p-menuitem:hover .p-submenu-list {
+    display: block;
+  }
+  
+  .p-submenu-list .p-menuitem {
+    margin: 0;
+  }
+  

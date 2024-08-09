@@ -1,0 +1,142 @@
+.header-container {
+  background-color: #071426;
+  border-bottom: 1px solid white;
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+}
+
+.logo .logo-img {
+  height: 3.5rem; /* Use rem for responsiveness */
+  background-color: azure;
+  border-radius: 10%;
+}
+
+.app-name {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.app-name h1,
+.app-name h2 {
+  margin: 0;
+  color: white; /* Ensure the color is white */
+  transition: none; /* Disable transitions */
+}
+
+.app-name h1 {
+  font-size: 1.5rem; /* Use rem for responsiveness */
+  margin-bottom: 0.5rem; /* Adjust as needed to reduce the gap */
+}
+
+.app-name h2 {
+  font-size: 1rem; /* Use rem for responsiveness */
+  margin-top: 0; /* Ensure there's no extra space above h2 */
+}
+
+.user-details {
+  position: relative;
+}
+
+.user-icon-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.user-icon {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 1000;
+  display: block;
+}
+
+.user-dropdown.active {
+  display: block;
+}
+
+.user-info {
+  padding: 1rem;
+  width: max-content;
+}
+
+.user-info div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.user-info div strong {
+  margin-right: 0.5rem;
+  color: #333;
+}
+
+.logout {
+  border-top: 1px solid #ccc;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.logout-icon {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #071426;
+  cursor: pointer;
+}
+
+.logout-icon:hover {
+  color: #005bb5;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo, .user-details {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .app-name {
+    order: -1; /* Move the app name to the top */
+    margin-bottom: 0.5rem;
+  }
+}
+
+.custom-button img {
+  width: 5%; /* Adjust size as needed */
+  height: 5%; /* Adjust size as needed */
+}
+
+::ng-deep .p-button.p-button-icon-only {
+  width: 3rem;
+  padding: 0.68rem 0;
+}
+
